@@ -1,0 +1,49 @@
+<!-- home.component.html -->
+<body>
+    <br/>
+    <br/>
+
+    <div class="container-fluid text-center">
+        <div class="d-flex justify-content-center align-items-center">
+            <h1 class="mt-5 custom-shadow card col-3 custom-card-title1">
+                Welcome to Taco Cloud. <br/>
+                Click below to make your taco!
+            </h1>
+        </div>
+
+        <br/>
+        <br/>
+        <br/>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-3">
+                    <a class="nav-link" [routerLink]="['/login']">
+                        <div class="big-card-1 custom-shadow d-flex justify-content-center align-items-center">
+                            Login
+                        </div>
+                    </a>
+                </div>
+                <div class="col-1"></div>
+                <div class="col-4">
+                    <a class="nav-link" [routerLink]="['/design/taco']">
+                        <img class="img-fluid img-responsive rounded-circle custom-shadow" src="assets/images/TacoCloud.jpg"/>
+                    </a>
+                </div>
+                <div class="col-1"></div>
+                <div class="col-3">
+                    <a class="nav-link" [routerLink]="['/register']">
+                        <div class="big-card-2 custom-shadow d-flex justify-content-center align-items-center">
+                            Register
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+    
+    </footer>
+</body>
+

@@ -1,0 +1,21 @@
+<body>
+    <h2>Design your taco!</h2>
+    <div *ngFor="let key of ingredientsByType | keyvalue">
+        <h3>{{ key.key }}</h3>
+        <ul>
+            <li *ngFor="let ingredient of key.value">
+                <label>
+                    <input type="checkbox" [value]="ingredient" (change)="toggleIngredient($event, ingredient)">
+                    {{ ingredient.name}}
+                </label>
+            </li>
+        </ul>
+    </div>
+
+    <h2>Name your taco:</h2>
+    <input [(ngModel)]="taco.name">
+
+    <button (click)="createTaco()">Add your taco to the cart!</button>
+
+    <button (click)="redirectToOrderWindow('/order')">Place your order!</button>
+</body>

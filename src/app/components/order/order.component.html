@@ -1,0 +1,65 @@
+<body>
+    <h2>Here are the tacos inside your order!</h2>
+    <ul>
+        <li *ngFor="let taco of tacos">
+            {{ taco.name }}
+            <button (click)="deleteTaco(taco.id)">X</button>
+        </li>
+    </ul>
+
+    <br/>
+    <br/>
+
+    <h3>Deliver my taco masterpieces to...</h3>
+
+      <label for="deliveryName">Name: </label>
+      <input type="text" [(ngModel)]="order.deliveryName"/>
+      
+      <br/>
+      <br/>
+
+      <label for="deliveryStreet">Street address: </label>
+      <input type="text" [(ngModel)]="order.deliveryStreet"/>
+      
+      <br/>
+      <br/>
+
+      <label for="deliveryCity">City: </label>
+      <input type="text" [(ngModel)]="order.deliveryCity"/>
+      
+      <br/>
+      <br/>
+
+      <label for="deliveryState">State: </label>
+      <input type="text" [(ngModel)]="order.deliveryState"/>
+      
+      <br/>
+      <br/>
+
+      <label for="deliveryZip">Zip code: </label>
+      <input type="text" [(ngModel)]="order.deliveryZip"/>
+      
+      <br/>
+      <br/>
+
+      <h3>Here's how I'll pay...</h3>
+      <label for="ccNumber">Credit Card #: </label>
+      <input type="text" [(ngModel)]="order.ccNumber"/>
+      
+      <br/>
+      <br/>
+
+      <label for="ccExpiration">Expiration: </label>
+      <input type="text" [(ngModel)]="order.ccExpiration"/>
+      
+      <br/>
+      <br/>
+
+      <label for="ccCVV">CVV: </label>
+      <input type="text"[(ngModel)]="order.ccCVV"/>
+      
+      <br/>
+      <br/>
+
+      <button (click)="processOrder()">Place your order!</button>
+</body>>

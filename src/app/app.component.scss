@@ -1,0 +1,19 @@
+h1 {
+    font-family: "Times New Roman";
+}
+
+body {
+    background-image: url("/assets/images/small-tacos.png");
+    font-size: 23px;
+    opacity: 1;
+    min-height: 100vh;
+}
+
+.corner-image {
+    position: fixed;
+    top: 92%;
+    right: 0;
+    width: 120px;
+    height: 90px;
+    z-index: 1000;
+}
