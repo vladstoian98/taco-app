@@ -12,6 +12,12 @@ import { Router } from '@angular/router';
 })
 export class DesignTacoComponent implements OnInit{
 
+  errorMessageIngredients: string | null = null;
+
+  errorMessageName: string | null = null;
+
+  errorPresent: boolean = false;
+
   ingredientsByType: { [key: string]: Ingredient[] } = {};
 
   taco: Taco = new Taco();
@@ -29,9 +35,35 @@ export class DesignTacoComponent implements OnInit{
   }
 
   createTaco(): void {
-    this.designTacoService.createTacoFromIngredients(this.taco).subscribe(data => {
-      console.log("The taco: " + this.taco + " has been saved.");
+    const allCategoriesSelected = Object.values(this.ingredientsByType).every(category => {
+      return this.taco.ingredients.some(ingredient => category.includes(ingredient));
     });
+  
+
+    if (!allCategoriesSelected) {
+      // If not all categories have at least one selected ingredient, show an error
+      this.errorMessageIngredients = "Select at least one ingredient from each categrory.";
+      this.errorPresent = true;
+    } 
+    
+    if (this.taco.name == "") {
+      this.errorMessageName = "Please name your taco.";
+      this.errorPresent = true;
+    } 
+    
+
+    if (this.errorPresent == false){
+      // If validation passes, proceed to create the taco
+      this.designTacoService.createTacoFromIngredients(this.taco).subscribe(data => {
+        console.log("The taco: " + this.taco + " has been saved.");
+        // Optional: redirect to another page or show success message
+      });
+
+      this.errorMessageIngredients = null;
+      this.errorMessageName = null;
+    }
+
+    this.errorPresent = false;
   }
 
   toggleIngredient(event: any, ingredient: Ingredient): void {

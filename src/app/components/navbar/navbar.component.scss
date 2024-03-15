@@ -1,51 +1,57 @@
-.navbar-title {
-    margin-left: 20px;
-}
 
-.navbar-nav {
-    flex-direction: row; /* Display navbar items in a row */
-    transform: translateY(-100%); /* Initially hide the navbar items */
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Add transition to opacity and transform */
-    margin-left: 20px;
-}
 
-.navbar-collapse.show .navbar-nav {
-    transform: translateY(0); /* Show the navbar items when navbar is expanded */
-    opacity: 1;
-}
+// .navbar-title {
+//     margin-left: 20px;
+// }
 
-.navbar-collapse .navbar-nav .nav-item {
-    margin-right: 20px;  // Add space between items if needed
-}
+// .navbar-nav {
+//     flex-direction: row; /* Display navbar items in a row */
+//     transform: translateY(-100%); /* Initially hide the navbar items */
+//     opacity: 0;
+//     transition: opacity 0.3s ease, transform 0.3s ease; /* Add transition to opacity and transform */
+//     margin-left: 20px;
+// }
 
-.navbar-nav .nav-item .nav-link {
-    text-align: center; 
-}
+// .navbar-collapse.show .navbar-nav {
+//     transform: translateY(0); /* Show the navbar items when navbar is expanded */
+//     opacity: 1;
+// }
 
-@media (min-width: 992px) { /* Bootstrap's lg breakpoint */
-    .navbar-expand-lg .navbar-nav {
-        transform: none;
-        opacity: 1;
-    }
-}
+// .navbar-collapse .navbar-nav .nav-item {
+//     margin-right: 20px;  // Add space between items if needed
+// }
 
-.custom-navbar {
-    background: linear-gradient(90deg, #cfcdcd, #e6bc7e); /* Change colors as desired */
-    font-size: 23px;
-}
+// .navbar-nav .nav-item .nav-link {
+//     text-align: center; 
+// }
 
-.navbar-title{
-    font-size: 27px;
-}
+// @media (min-width: 992px) { /* Bootstrap's lg breakpoint */
+//     .navbar-expand-lg .navbar-nav {
+//         transform: none;
+//         opacity: 1;
+//     }
+// }
 
-@media (max-width: 1600px) {
-    .navbar-title{
-        font-size: 23px;
-    }
+// .custom-navbar {
+//     background: linear-gradient(90deg, #cfcdcd, #e6bc7e); /* Change colors as desired */
+//     font-size: 23px;
+// }
 
-    .custom-navbar {
-        background: linear-gradient(90deg, #cfcdcd, #e6bc7e); /* Change colors as desired */
-        font-size: 20px;
-    }
+// .navbar-title{
+//     font-size: 27px;
+// }
+
+// @media (max-width: 1600px) {
+//     .navbar-title{
+//         font-size: 23px;
+//     }
+
+//     .custom-navbar {
+//         background: linear-gradient(90deg, #cfcdcd, #e6bc7e); /* Change colors as desired */
+//         font-size: 20px;
+//     }
+// }
+
+.custom-shadow {
+    box-shadow: 10px 10px 30px 10px rgba(0,0,0,0.75);
 }

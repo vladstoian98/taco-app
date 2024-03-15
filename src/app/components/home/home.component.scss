@@ -1,101 +1,105 @@
 
 
-.custom-card-wrap {
-    border-radius: 2rem;
-    background-image: url("../../../assets/images/wrap-transparent-mic.png");
-}
+// .custom-card-wrap {
+//     border-radius: 2rem;
+//     background-image: url("../../../assets/images/wrap-transparent-mic.png");
+// }
 
-.custom-card-title1 {
-    border-radius: 2rem;
-    background:#f3dcba;
-    height: 130px;
-}
+// .custom-card-title1 {
+//     border-radius: 2rem;
+//     background:#f3dcba;
+//     height: 130px;
+// }
 
-.card {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* if you want to center horizontally too */
-}
+// .card {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center; /* if you want to center horizontally too */
+// }
 
-.custom-card-title2 {
-    border-radius: 2rem;
-    background-image: url("../../../assets/images/polka-dot-red.png");
-    font-weight: bold;
-}
+// .custom-card-title2 {
+//     border-radius: 2rem;
+//     background-image: url("../../../assets/images/polka-dot-red.png");
+//     font-weight: bold;
+// }
 
 .custom-shadow {
     box-shadow: 20px 20px 30px 10px rgba(0,0,0,0.75);
 }
 
-.custom-card-protein {
-    border-radius: 2rem;
-    background-image: url("../../../assets/images/carne.png");
+.card {
+    border-radius: 100px;
 }
 
-.nav-item .nav-link {
-    border-right: 1px solid #999;
-    padding-right: 15px;
-    margin-right: 5px;
-    margin-left: 5px;
-}
+// .custom-card-protein {
+//     border-radius: 2rem;
+//     background-image: url("../../../assets/images/carne.png");
+// }
 
-.navbar-brand {
-    margin-right: 5px;
-    margin-left: 5px;
-}
+// .nav-item .nav-link {
+//     border-right: 1px solid #999;
+//     padding-right: 15px;
+//     margin-right: 5px;
+//     margin-left: 5px;
+// }
 
-.nav-item:last-child .nav-link {
-    border-right: none;
-}
+// .navbar-brand {
+//     margin-right: 5px;
+//     margin-left: 5px;
+// }
 
-.big-card-1 {
-    height: calc(20vh);
-    overflow-y: auto; 
-    background: linear-gradient(90deg, #f3dcba, #fffefe);
-    // background-image: url("../../../assets/images/key-transp.jpg");
-    border-radius: 2rem;
-    color:#5b4f4f;
-    font-size: 40px;
-}
+// .nav-item:last-child .nav-link {
+//     border-right: none;
+// }
 
-.big-card-2 {
-    height: calc(20vh);
-    overflow-y: auto; 
-    background: linear-gradient(90deg, #fffefe, #f3dcba);
-    // background-image: url("../../../assets/images/register-family-transp.png");
-    border-radius: 2rem;
-    color:#5b4f4f;
-    font-size: 40px;
-}
+// .big-card-1 {
+//     height: calc(20vh);
+//     overflow-y: auto; 
+//     background: linear-gradient(90deg, #f3dcba, #fffefe);
+//     // background-image: url("../../../assets/images/key-transp.jpg");
+//     border-radius: 2rem;
+//     color:#5b4f4f;
+//     font-size: 40px;
+// }
 
-@media (max-width: 1600px) {
-    .big-card-1 {
-        font-size: 20px;
-    }
+// .big-card-2 {
+//     height: calc(20vh);
+//     overflow-y: auto; 
+//     background: linear-gradient(90deg, #fffefe, #f3dcba);
+//     // background-image: url("../../../assets/images/register-family-transp.png");
+//     border-radius: 2rem;
+//     color:#5b4f4f;
+//     font-size: 40px;
+// }
 
-    .big-card-2 {
-        font-size: 20px;
-    }
+// @media (max-width: 1600px) {
+//     .big-card-1 {
+//         font-size: 20px;
+//     }
 
-    .custom-card-title1 {
-        font-size: 20px;
-    }
+//     .big-card-2 {
+//         font-size: 20px;
+//     }
+
+//     .custom-card-title1 {
+//         font-size: 20px;
+//     }
 
     
-}
+// }
 
-@media (min-width: 1600px) and (max-width: 2000px) {
-    .big-card-1 {
-        font-size: 25px;
-    }
+// @media (min-width: 1600px) and (max-width: 2000px) {
+//     .big-card-1 {
+//         font-size: 25px;
+//     }
 
-    .big-card-2 {
-        font-size: 25px;
-    }
+//     .big-card-2 {
+//         font-size: 25px;
+//     }
 
-    .custom-card-title1 {
-        font-size: 26px;
-    }
-}
+//     .custom-card-title1 {
+//         font-size: 26px;
+//     }
+// }
 
 

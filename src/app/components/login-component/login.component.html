@@ -1,12 +1,46 @@
 <body>
+  
   <div class="login-container">
     <form (ngSubmit)="login()">
-      <label for="username">Username:</label><br>
-      <input type="text" id="username" [(ngModel)]="user.username" name="username" required><br>
-      <label for="password">Password:</label><br>
-      <input type="password" id="password" [(ngModel)]="user.password" name="password" required><br>
-      <input type="submit" value="Login">
+
+    
+
+      <div class="form-group">
+        <div class="card bg-light custom-shadow">
+          <div class="card-body">
+              <h4 class="card-title">Username</h4>
+          </div>
+        </div>
+        <!-- <label class="col-form-label col-form-label-lg mt-4" for="username">Username</label> -->
+        <br/>
+        <input class="form-control form-control-lg" type="text" id="username" [(ngModel)]="user.username" name="username" required>
+      </div>
+
+      <br/>
+      <br/>
+
+      <div class="form-group">
+        <div class="card bg-light custom-shadow">
+          <div class="card-body">
+              <h4 class="card-title">Password</h4>
+          </div>
+        </div>
+        <br/>
+        <input class="form-control form-control-lg" type="password" id="password" [(ngModel)]="user.password" name="password" required>
+      </div>
+
+      <br/>
+      <br/>
+      
+      <div class="form-group">
+        <input class="btn btn-primary btn-lg mt-4" type="submit" value="Login">
+      </div>
+
+      <br/>
+
+      <div *ngIf="loginError" class="alert alert-danger custom-alert">{{ loginError }} <br/> </div>
+
+      <br/>
     </form>
-    <p *ngIf="loginError" class="error-message">{{ loginError }}</p>
   </div>
 </body>

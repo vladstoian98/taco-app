@@ -1,65 +1,108 @@
 <body>
-    <h2>Here are the tacos inside your order!</h2>
-    <ul>
-        <li *ngFor="let taco of tacos">
-            {{ taco.name }}
-            <button (click)="deleteTaco(taco.id)">X</button>
-        </li>
-    </ul>
+    <div class="order-container">
+        <br/>
+        <div class="card bg-light custom-shadow">
+          <div class="card-body">
+              <h4 class="card-title">Here are the tacos inside your order</h4>
+          </div>
+        </div>
+        <br/>
+        <ul class = "no-bullets">
+            <li *ngFor="let taco of tacos">
+                {{ taco.name }} {{ taco.totalTacoPrice}}$
+                <button class="btn btn-primary delete-btn" (click)="deleteTaco(taco.id)">Exclude</button>
+                <br/><br/>
+            </li>
+        </ul>
 
-    <br/>
-    <br/>
+        <div class="card bg-light custom-shadow total-cost-card">
+            <div class="card-body">
+                <h4 class="card-title card-title-cost">Total order pirce: {{totalOrderCost}}$</h4>
+            </div>
+        </div>
 
-    <h3>Deliver my taco masterpieces to...</h3>
+        <div *ngIf="tacosInOrderErrorMessage" class="alert alert-danger custom-alert">{{ tacosInOrderErrorMessage }} <br/> </div>
 
-      <label for="deliveryName">Name: </label>
-      <input type="text" [(ngModel)]="order.deliveryName"/>
-      
-      <br/>
-      <br/>
+        <br/>
+        <br/>
 
-      <label for="deliveryStreet">Street address: </label>
-      <input type="text" [(ngModel)]="order.deliveryStreet"/>
-      
-      <br/>
-      <br/>
+        <div class="card bg-light custom-shadow">
+            <div class="card-body">
+                <h4 class="card-title">Where should we deliver your taco masterpiece?</h4>
+            </div>
+        </div>
 
-      <label for="deliveryCity">City: </label>
-      <input type="text" [(ngModel)]="order.deliveryCity"/>
-      
-      <br/>
-      <br/>
+        <br/>
 
-      <label for="deliveryState">State: </label>
-      <input type="text" [(ngModel)]="order.deliveryState"/>
-      
-      <br/>
-      <br/>
+        <label for="deliveryName">Full name </label>
+        <input class="form-control form-control-lg custom-input" type="text" [(ngModel)]="order.deliveryName"/>
+        
+        <br/>
+        <br/>
 
-      <label for="deliveryZip">Zip code: </label>
-      <input type="text" [(ngModel)]="order.deliveryZip"/>
-      
-      <br/>
-      <br/>
+        <label for="deliveryStreet">Street address </label>
+        <input class="form-control form-control-lg custom-input" type="text" [(ngModel)]="order.deliveryStreet"/>
+        
+        <br/>
+        <br/>
 
-      <h3>Here's how I'll pay...</h3>
-      <label for="ccNumber">Credit Card #: </label>
-      <input type="text" [(ngModel)]="order.ccNumber"/>
-      
-      <br/>
-      <br/>
+        <label for="deliveryCity">City </label>
+        <input class="form-control form-control-lg custom-input" type="text" [(ngModel)]="order.deliveryCity"/>
+        
+        <br/>
+        <br/>
 
-      <label for="ccExpiration">Expiration: </label>
-      <input type="text" [(ngModel)]="order.ccExpiration"/>
-      
-      <br/>
-      <br/>
+        <label for="deliveryState">County </label>
+        <input class="form-control form-control-lg custom-input" type="text" [(ngModel)]="order.deliveryState"/>
+        
+        <br/>
+        <br/>
 
-      <label for="ccCVV">CVV: </label>
-      <input type="text"[(ngModel)]="order.ccCVV"/>
-      
-      <br/>
-      <br/>
+        <label for="deliveryZip">Zip code </label>
+        <input class="form-control form-control-lg custom-input" type="text" [(ngModel)]="order.deliveryZip"/>
 
-      <button (click)="processOrder()">Place your order!</button>
+        <br/>
+        <br/>
+
+        <div *ngIf="deliveryInfoErrorMessage" class="alert alert-danger custom-alert">{{ deliveryInfoErrorMessage }} <br/> </div>
+
+        
+        <br/>
+        <br/>
+
+        <div class="card bg-light custom-shadow ">
+            <div class="card-body">
+                <h4 class="card-title">Payment info</h4>
+            </div>
+        </div>
+
+        <br/>
+
+        <label for="ccNumber">Credit Card Number </label>
+        <input class="form-control form-control-lg custom-input" type="text" [(ngModel)]="order.ccNumber"/>
+        
+        <br/>
+        <br/>
+
+        <label for="ccExpiration">Expiration Date </label>
+        <input class="form-control form-control-lg custom-input" type="text" [(ngModel)]="order.ccExpiration"/>
+        
+        <br/>
+        <br/>
+
+        <label for="ccCVV">CVV </label>
+        <input class="form-control form-control-lg custom-input" type="text"[(ngModel)]="order.ccCVV"/>
+        
+        <br/>
+        <br/>
+
+        <div *ngIf="paymentInfoErrorMessage" class="alert alert-danger custom-alert">{{ paymentInfoErrorMessage }} <br/> </div>
+
+        <br/>
+        <br/>
+
+        <button class="btn btn-primary btn-lg mt-4 place-order-btn" (click)="processOrder()">Place your order!</button>
+
+        <br/>
+    </div>
 </body>>

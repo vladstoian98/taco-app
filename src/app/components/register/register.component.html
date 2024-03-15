@@ -1,47 +1,94 @@
 
 <body>
-    <form (submit)="onSubmit()">
-        <div>
-            <label for="username">Your desired username:</label>
-            <input type="text" id="username" [(ngModel)]="model.username" name="username">
-        </div>
+    
+    <div class="register-container">
+        <form (submit)="onSubmit()">
 
-        <div>
-            <label for="password">Your desired password:</label>
-            <input type="password" id="password" [(ngModel)]="model.password" name="password">
-        </div>
+            <br/>
 
-        <div>
-            <label for="fullname">Your full name:</label>
-            <input type="text" id="fullname" [(ngModel)]="model.fullname" name="fullname">
-        </div>
+            <div class="card bg-light custom-shadow">
+                <div class="card-body">
+                    <h4 class="card-title">Please input your data</h4>
+                </div>
+            </div>
 
-        <div>
-            <label for="street">Your street address:</label>
-            <input type="text" id="street" [(ngModel)]="model.street" name="street">
-        </div>
+              <br/>
+              <br/>
 
-        <div>
-            <label for="city">Your city:</label>
-            <input type="text" id="city" [(ngModel)]="model.city" name="city">
-        </div>
+            <div>
+                <label for="username">Username</label>
+                <input class="form-control form-control-lg custom-input" type="text" id="username" [(ngModel)]="model.username" name="username">
+            </div>
 
-        <div>
-            <label for="state">Your state:</label>
-            <input type="text" id="state" [(ngModel)]="model.state" name="state">
-        </div>
+            <br/>
 
-        <div>
-            <label for="zip">Your zip:</label>
-            <input type="text" id="zip" [(ngModel)]="model.zip" name="zip">
-        </div>
+            <div>
+                <label for="password">Password</label>
+                <input class="form-control form-control-lg custom-input" type="password" id="password" [(ngModel)]="model.password" name="password">
+            </div>
 
-        <div>
-            <label for="phone">Your phone number:</label>
-            <input type="text" id="phone" [(ngModel)]="model.phone" name="phone">
-        </div>
+            <br/>
 
-        <button type="submit">Register</button>
+            <div>
+                <label for="fullname">Full name</label>
+                <input class="form-control form-control-lg custom-input" type="text" id="fullname" [(ngModel)]="model.fullname" name="fullname">
+            </div>
 
-    </form>
+            <br/>
+
+            <div>
+                <label for="street">Street address</label>
+                <input class="form-control form-control-lg custom-input" type="text" id="street" [(ngModel)]="model.street" name="street">
+            </div>
+
+            <br/>
+
+            <div>
+                <label for="city">City</label>
+                <input class="form-control form-control-lg custom-input" type="text" id="city" [(ngModel)]="model.city" name="city">
+            </div>
+
+            <br/>
+
+            <div>
+                <label for="state">County</label>
+                <input class="form-control form-control-lg custom-input" type="text" id="state" [(ngModel)]="model.state" name="state">
+            </div>
+
+            <br/>
+
+            <div>
+                <label for="zip">Zip code</label>
+                <input class="form-control form-control-lg custom-input"  type="text" id="zip" [(ngModel)]="model.zip" name="zip">
+            </div>
+
+            <br/>
+
+            <div>
+                <label for="phone">Your phone number:</label>
+                <input class="form-control form-control-lg custom-input"  type="text" id="phone" [(ngModel)]="model.phone" name="phone">
+            </div>
+
+            <br/>
+            <br/>
+
+            <button class="btn btn-primary btn-lg mt-4" type="submit">Register</button>
+            <br/>
+            <br/>
+
+            
+        </form>
+
+        <div *ngIf="registerError" class="alert alert-danger custom-alert">{{ registerError }} <br/> </div>
+
+        <br/>
+        <br/>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    
 </body>

@@ -6,14 +6,15 @@ import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/register/register.component';
 import { DesignTacoComponent } from './components/design-taco/design-taco.component';
 import { OrderComponent } from './components/order/order.component';
+import { AuthGuard } from './guard/auth.guard';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'tacos/past', component: TacoListComponent },
+  { path: 'tacos/past', component: TacoListComponent, canActivate: [AuthGuard] },
   { path: 'register', component: RegisterComponent },
-  { path: 'design/taco', component: DesignTacoComponent },
-  { path: 'order', component: OrderComponent },
+  { path: 'design/taco', component: DesignTacoComponent, canActivate: [AuthGuard] },
+  { path: 'order', component: OrderComponent, canActivate: [AuthGuard] },
   { path: '', redirectTo: '/home', pathMatch: 'full' }
   
 ];

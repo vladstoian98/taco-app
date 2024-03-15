@@ -1,21 +1,59 @@
 <body>
-    <h2>Design your taco!</h2>
-    <div *ngFor="let key of ingredientsByType | keyvalue">
-        <h3>{{ key.key }}</h3>
-        <ul>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <div class="container mt-4 content-container">
+        <div class="card bg-light custom-shadow">
+          <div class="card-body">
+              <h4 class="card-title">Design a taco</h4>
+          </div>
+        </div>
+        <br/>
+        <br/>
+        <div *ngFor="let key of ingredientsByType | keyvalue">
+          <h3>{{ key.key }}</h3>
+          <ul class="no-bullets">
             <li *ngFor="let ingredient of key.value">
-                <label>
-                    <input type="checkbox" [value]="ingredient" (change)="toggleIngredient($event, ingredient)">
-                    {{ ingredient.name}}
-                </label>
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" [value]="ingredient" (change)="toggleIngredient($event, ingredient)">
+                {{ ingredient.name }} {{ ingredient.price }}$
+              </label>
             </li>
-        </ul>
-    </div>
+            <br/>
+          </ul>
+          </div>
 
-    <h2>Name your taco:</h2>
-    <input [(ngModel)]="taco.name">
 
-    <button (click)="createTaco()">Add your taco to the cart!</button>
+          <div *ngIf="errorMessageIngredients" class="alert alert-danger custom-alert">{{ errorMessageIngredients }} <br/> </div>
 
-    <button (click)="redirectToOrderWindow('/order')">Place your order!</button>
+          <br/>
+
+          <div *ngIf="errorMessageName" class="alert alert-danger custom-alert">{{ errorMessageName }} <br/> </div>
+
+          <br/>
+          <br/>
+          
+          <div class="card bg-light custom-card">
+            <div class="card-body">
+                <h4 class="card-title">Name your taco</h4>
+            </div>
+          </div>
+          <br/>
+
+          <br/>
+          <input class="form-control" [(ngModel)]="taco.name">
+          <br/>
+          <br/>
+          <button (click)="createTaco()" class="btn btn-primary custom-button">Add your taco to the cart!</button>
+          <br/>
+          <br/>
+          <button (click)="redirectToOrderWindow('/order')" class="btn btn-primary custom-button">Place your order!</button>
+          <br/>
+          <br/>
+      </div>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
 </body>

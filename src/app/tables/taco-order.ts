@@ -12,6 +12,7 @@ export class TacoOrder {
     ccNumber: string = '';
     ccExpiration: string = '';
     ccCVV: string = '';
+    totalOrderPrice: number = 0;
     tacos?: Taco[];
     user?: User;
 

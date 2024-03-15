@@ -38,11 +38,9 @@ export class LoginComponent implements OnInit {
         if (error.status === 401) {
           // The server responded with 'Unauthorized'. The username or password were incorrect.
           this.loginError = 'Invalid username or password.';  
-          alert('Invalid username or password.');
         } else {
           // Some other error occurred.
-          this.loginError = 'An error occurred while trying to log in.';
-          alert('An error occurred while trying to log in.');
+          this.loginError = 'Invalid username or password.';
         }
       }
     );

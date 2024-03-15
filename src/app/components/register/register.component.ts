@@ -12,17 +12,24 @@ export class RegisterComponent {
 
   model = new RegistrationForm();
 
+  registerError: string = '';
+
   constructor(private registrationService: RegistrationService, private router : Router) {}
 
   onSubmit() {
-    this.registrationService.registerUser(this.model).subscribe(
-      response => {
-        console.log('Registration successful', response);
-        this.router.navigate(['/login']);
-      },
-      error => {
-        console.error('Registration failed', error);
-      }
-    );
+    if(this.model.city == "" || this.model.fullname == "" || this.model.password == "" || 
+        this.model.phone == "" || this.model.state == "" || this.model.street == "" || this.model.username == "" || this.model.zip == "" ) {
+          this.registerError = "Please fill the fields from above.";
+    } else {
+      this.registrationService.registerUser(this.model).subscribe(
+        response => {
+          console.log('Registration successful', response);
+          this.router.navigate(['/login']);
+        },
+        error => {
+          console.error('Registration failed', error);
+        }
+      );
+    }
   }
 }
