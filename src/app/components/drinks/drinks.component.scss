@@ -1,0 +1,67 @@
+
+
+.card {
+    border-radius: 100px;
+    box-shadow: 5px 5px 20px 10px rgba(0,0,0,0.75);
+    padding: 16px;
+}
+
+.text-container {
+    overflow: hidden; /* Hide overflow */
+}
+
+.card-img-top {
+    border-radius: 100px;
+}
+
+.card-title {
+    padding-left: 50px;
+}
+
+.card-text {
+    padding-left: 50px;
+}
+
+.btn-shift-left {
+    margin-right: 30px;
+    border-radius: 100px;
+}
+
+.card-title, .card-price {
+    white-space: nowrap; /* Keep the text in one line */
+    overflow: hidden; /* Hide the overflow text */
+    text-overflow: ellipsis; /* Add ellipsis at the end of the overflow text */
+    margin-bottom: 4px; /* Add some space between the title and the price */
+}
+
+.add-to-order {
+    align-self: center; /* Center the button in the available space */
+    margin-top: auto; /* Push the button to the bottom of the card-body */
+    border-radius: 100px;
+}
+
+.col-md-4 {
+    padding: 30px; /* This adds space around the column */
+}
+
+.custom-button-taco {
+    width: 1000px;  /* Adjust the width as needed */
+    margin: 0 auto; /* Centers the button horizontally within its container */
+    display: block; /* Makes the button a block element to fill the specified width */
+    box-shadow: 5px 5px 20px 10px rgba(0,0,0,0.75);
+    background: linear-gradient(to right, #f0b30c, rgb(240, 202, 131));
+    font-size: 20px;
+}
+
+.custom-button-order {
+    width: 1000px;  /* Adjust the width as needed */
+    margin: 0 auto; /* Centers the button horizontally within its container */
+    display: block; /* Makes the button a block element to fill the specified width */
+    box-shadow: 5px 5px 20px 10px rgba(0,0,0,0.75);
+    background: linear-gradient(to right, #f89a9a, rgb(233, 116, 38));
+    font-size: 20px;
+}
+
+.custom-bottom-margin {
+    margin-bottom: 50px;
+}

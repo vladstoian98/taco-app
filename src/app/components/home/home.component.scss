@@ -103,3 +103,55 @@
 // }
 
 
+.taco-intro-card {
+    background: linear-gradient(to bottom, rgb(231, 224, 155), #f1c039);
+    border-color: rgb(255, 199, 17);
+    border-width: 1mm;
+    border-style: solid;
+}
+
+.card-drink {
+    width: 50%;
+    margin: 0 auto;
+    background: linear-gradient(to bottom, rgb(218, 215, 206), #928f85);
+    border-color: rgb(116, 90, 6);
+    border-width: 1mm;
+    border-style: solid;
+    min-width: 100px;
+    
+}
+
+.card-order {
+    width: 50%;
+    margin: 0 auto;
+    background: linear-gradient(to bottom, rgb(218, 215, 206), #e9d491);
+    border-color: rgb(196, 182, 135);
+    border-width: 1mm;
+    border-style: solid;
+    min-width: 100px;
+}
+
+.card-title-custom {
+    font-size: 18px;
+}
+
+.move-right {
+    margin-left: 100px;
+}
+
+.custom-image-secondary {
+    min-width: 200px;
+    height: auto;
+}
+
+.custom-top-margin {
+    margin-top: 200px;
+  }
+
+.custom-top-margin-main {
+    margin-top: 100px;
+}
+
+.custom-bottom-margin {
+    margin-bottom: 100px;
+}

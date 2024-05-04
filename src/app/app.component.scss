@@ -4,16 +4,78 @@
 
 body {
     background-image: url("/assets/images/small-tacos.png");
-    font-size: 23px;
+    
     opacity: 1;
     min-height: 100vh;
 }
 
 .corner-image {
     position: fixed;
-    top: 92%;
+    top: 88%;
     right: 0;
     width: 120px;
     height: 90px;
     z-index: 1000;
 }
+
+
+// @media (min-width: 600px) {
+//     body {
+//       font-size: 1px; /* larger screens */
+//     }
+//   }
+  
+// @media (min-width: 1000px) {
+//     body  {
+//         font-size: 20px; /* even larger screens */
+//     }
+// }
+
+// @media (min-width: 600px) {
+//     .card-title {
+//       font-size: 15px; /* larger screens */
+//     }
+//   }
+  
+// @media (min-width: 1000px) {
+//     .card-title  {
+//         font-size: 20px; /* even larger screens */
+//     }
+// }
+
+.footer {
+    background-color: #eecbcb;
+    color: white;
+    padding: 20px;
+    width: 100%;
+    display: flex;          /* Enables flexbox layout */
+    align-items: center;    /* Vertically centers the content */
+    justify-content: space-between; /* Spaces out the children evenly */
+    text-align: left;
+    font-size: 18px;        /* Set an appropriate font size */
+}
+
+.footer p {
+    margin: 0;               /* Removes default margin */
+    line-height: 1.2;        /* Adjust line height for better readability */
+}
+
+/* Media query for tablets */
+@media (max-width: 768px) {
+    .footer {
+        font-size: 18px; /* Smaller font size for smaller devices */
+    }
+
+    .corner-image {
+        width: 70px; /* Smaller size for smaller screens */
+        height: auto; /* Maintains aspect ratio */
+    }
+}
+
+/* Media query for mobile phones */
+@media (max-width: 480px) {
+    .footer {
+        font-size: 14px; /* Even smaller font size for mobile phones */
+    }
+}
+  

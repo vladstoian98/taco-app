@@ -1,108 +1,145 @@
+<script src="https://js.stripe.com/v3/"></script>
+
 <body>
-    <div class="order-container">
-        <br/>
-        <div class="card bg-light custom-shadow">
-          <div class="card-body">
-              <h4 class="card-title">Here are the tacos inside your order</h4>
-          </div>
-        </div>
-        <br/>
-        <ul class = "no-bullets">
-            <li *ngFor="let taco of tacos">
-                {{ taco.name }} {{ taco.totalTacoPrice}}$
-                <button class="btn btn-primary delete-btn" (click)="deleteTaco(taco.id)">Exclude</button>
-                <br/><br/>
-            </li>
-        </ul>
-
-        <div class="card bg-light custom-shadow total-cost-card">
-            <div class="card-body">
-                <h4 class="card-title card-title-cost">Total order pirce: {{totalOrderCost}}$</h4>
+    <div class="row">
+        <div class="col-md-3 ps-5 custom-top-margin">
+            <div class="card bg-light custom-shadow card-taco">
+                <div class="card-body">
+                    <h4 class="card-title-custom">Add another taco before you finish your order by clicking below</h4>
+                </div>
             </div>
+            <br/>
+            <br/>
+            <a class="nav-link" [routerLink]="['/design/taco']">
+                <img class="img-fluid img-responsive rounded-circle custom-shadow" src="assets/images/order_transition_to_create_taco.jpg"/>
+            </a>
         </div>
 
-        <div *ngIf="tacosInOrderErrorMessage" class="alert alert-danger custom-alert">{{ tacosInOrderErrorMessage }} <br/> </div>
+        <div class="col-md-1">
+    
+        </div>
 
-        <br/>
-        <br/>
-
-        <div class="card bg-light custom-shadow">
+        <div class="order-container col-md-4 mb-5">
+            <br/>
+            <div class="card bg-light">
             <div class="card-body">
-                <h4 class="card-title">Where should we deliver your taco masterpiece?</h4>
+                <h4 class="card-title">Here are the tacos inside your order</h4>
             </div>
+            </div>
+            <br/>
+            <ul class = "no-bullets">
+                <li *ngFor="let taco of tacos">
+                    {{ taco.name }} {{ taco.totalTacoPrice}}$
+                    <button class="btn btn-primary delete-btn" (click)="deleteTaco(taco.id)">Exclude</button>
+                    <br/><br/>
+                </li>
+            </ul>
+            <ul class = "no-bullets">
+                <li *ngFor="let drink of drinksInOrder">
+                    {{ drink.name }} {{ drink.price}}$
+                    <button class="btn btn-primary delete-btn" (click)="deleteDrink(drink.id)" >Exclude</button>
+                    <br/><br/>
+                </li>
+            </ul>
+
+            <div class="card bg-light total-cost-card">
+                <div class="card-body">
+                    <h4 class="card-title card-title-cost">Total order pirce: {{totalOrderCost}}$</h4>
+                </div>
+            </div>
+
+            <div *ngIf="tacosInOrderErrorMessage" class="alert alert-danger custom-alert">{{ tacosInOrderErrorMessage }} <br/> </div>
+
+            <br/>
+            <br/>
+
+            <div class="card bg-light">
+                <div class="card-body">
+                    <h4 class="card-title">Where should we deliver your taco masterpiece?</h4>
+                </div>
+            </div>
+
+            <br/>
+
+            <label for="deliveryName">Full name </label>
+            <input class="form-control form-control-lg custom-input" type="text" [(ngModel)]="order.deliveryName"/>
+            
+            <br/>
+            <br/>
+
+            <label for="deliveryStreet">Street address </label>
+            <input class="form-control form-control-lg custom-input" type="text" [(ngModel)]="order.deliveryStreet"/>
+            
+            <br/>
+            <br/>
+
+            <label for="deliveryCity">City </label>
+            <input class="form-control form-control-lg custom-input" type="text" [(ngModel)]="order.deliveryCity"/>
+            
+            <br/>
+            <br/>
+
+            <label for="deliveryState">County </label>
+            <input class="form-control form-control-lg custom-input" type="text" [(ngModel)]="order.deliveryState"/>
+            
+            <br/>
+            <br/>
+
+            <label for="deliveryZip">Zip code </label>
+            <input class="form-control form-control-lg custom-input" type="text" [(ngModel)]="order.deliveryZip"/>
+
+            <br/>
+            <br/>
+
+            <div *ngIf="deliveryInfoErrorMessage" class="alert alert-danger custom-alert">{{ deliveryInfoErrorMessage }} <br/> </div>
+
+            
+            <br/>
+            <br/>
+
+            <div class="card bg-light">
+                <div class="card-body">
+                    <h4 class="card-title">Payment Info</h4>
+                </div>
+            </div>
+
+            <br/>
+
+            <div class="payment-info">
+                <h4 class="payment-title"></h4>
+                <div id="card-number-element" class="form-control"></div>
+                <br/>
+                <div id="card-expiry-element" class="form-control"></div>
+                <br/>
+                <div id="card-cvc-element" class="form-control"></div>
+                <br/>
+                <br/>
+                <div *ngIf="cardErrors" class="alert alert-danger">{{ cardErrors }}</div>
+            </div>
+            
+            <br/>
+            <br/>
+
+            <button class="btn btn-primary btn-lg mt-4 place-order-btn" (click)="processOrder()">Place your order!</button>
+
+            <br/>
         </div>
 
-        <br/>
-
-        <label for="deliveryName">Full name </label>
-        <input class="form-control form-control-lg custom-input" type="text" [(ngModel)]="order.deliveryName"/>
-        
-        <br/>
-        <br/>
-
-        <label for="deliveryStreet">Street address </label>
-        <input class="form-control form-control-lg custom-input" type="text" [(ngModel)]="order.deliveryStreet"/>
-        
-        <br/>
-        <br/>
-
-        <label for="deliveryCity">City </label>
-        <input class="form-control form-control-lg custom-input" type="text" [(ngModel)]="order.deliveryCity"/>
-        
-        <br/>
-        <br/>
-
-        <label for="deliveryState">County </label>
-        <input class="form-control form-control-lg custom-input" type="text" [(ngModel)]="order.deliveryState"/>
-        
-        <br/>
-        <br/>
-
-        <label for="deliveryZip">Zip code </label>
-        <input class="form-control form-control-lg custom-input" type="text" [(ngModel)]="order.deliveryZip"/>
-
-        <br/>
-        <br/>
-
-        <div *ngIf="deliveryInfoErrorMessage" class="alert alert-danger custom-alert">{{ deliveryInfoErrorMessage }} <br/> </div>
-
-        
-        <br/>
-        <br/>
-
-        <div class="card bg-light custom-shadow ">
-            <div class="card-body">
-                <h4 class="card-title">Payment info</h4>
-            </div>
+        <div class="col-md-1">
+    
         </div>
 
-        <br/>
-
-        <label for="ccNumber">Credit Card Number </label>
-        <input class="form-control form-control-lg custom-input" type="text" [(ngModel)]="order.ccNumber"/>
-        
-        <br/>
-        <br/>
-
-        <label for="ccExpiration">Expiration Date </label>
-        <input class="form-control form-control-lg custom-input" type="text" [(ngModel)]="order.ccExpiration"/>
-        
-        <br/>
-        <br/>
-
-        <label for="ccCVV">CVV </label>
-        <input class="form-control form-control-lg custom-input" type="text"[(ngModel)]="order.ccCVV"/>
-        
-        <br/>
-        <br/>
-
-        <div *ngIf="paymentInfoErrorMessage" class="alert alert-danger custom-alert">{{ paymentInfoErrorMessage }} <br/> </div>
-
-        <br/>
-        <br/>
-
-        <button class="btn btn-primary btn-lg mt-4 place-order-btn" (click)="processOrder()">Place your order!</button>
-
-        <br/>
+        <div class="col-md-3 custom-top-margin ps-5 pe-5 custom-bottom-margin">
+            <div class="card bg-light custom-shadow card-drink">
+                <div class="card-body">
+                    <h4 class="card-title-custom">Add another drink to your order by pressing below</h4>
+                </div>
+            </div>
+            <br/>
+            <br/>
+            <a class="nav-link" [routerLink]="['/drinks/selection']">
+                <img class="img-fluid img-responsive rounded-circle custom-shadow" src="assets/images/order_transition_drinks.jpg"/>
+            </a>
+        </div>
     </div>
-</body>>
+</body>

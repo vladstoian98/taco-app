@@ -3,6 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { LoginUser } from 'src/app/components/login-component/login-user';
 import { Router } from '@angular/router';
+import { TacoService } from '../taco-service/taco.service';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable({
   providedIn: 'root'
@@ -13,14 +15,26 @@ export class LoginService {
 
   private logoutUrl = 'http://localhost:8080/api/logout';
 
+  private deleteTacosWithoutOrderUrl = 'http://localhost:8080/api/deleteTacosWithoutOrder';
+
   redirectUrl: String = new String();
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
+  httpOptionsMethod() {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + localStorage.getItem('jwt') 
+    });
+
+    return { headers: headers};
+  }
+
   constructor(
-    private http: HttpClient, private router: Router
+    private http: HttpClient, private router: Router, private tacoService: TacoService, 
+    private jwtHelperService: JwtHelperService
   ) { }
 
   /** POST: login to the server */
@@ -29,14 +43,15 @@ export class LoginService {
   }
 
   logout() {
-    // Retrieve the JWT from localStorage
+    localStorage.removeItem(`drinksInOrder`);
+    this.deleteTacosWithoutOrder();
+    
     const jwtToken = localStorage.getItem('jwt');
 
     if (jwtToken) {
-      // Call the logout endpoint and pass the token
       this.http.post(this.logoutUrl, { token: jwtToken }).subscribe(
         () => {
-          localStorage.removeItem('jwt'); // Clear the JWT from localStorage
+          localStorage.removeItem('jwt'); 
           this.router.navigate(['/']); 
         },
         error => {
@@ -47,8 +62,32 @@ export class LoginService {
   }
 
   public isLoggedIn(): boolean {
-    // Check for the presence of the JWT in local storage
     const jwtToken = localStorage.getItem('jwt');
     return !!jwtToken;
+  }
+
+  isAdmin(): boolean {
+    return this.getUserRole() == 'admin';
+  }
+
+  getUserRole(): string {
+    const token = localStorage.getItem('jwt');
+    let decodedToken = null;
+    if(token) {
+      decodedToken = this.jwtHelperService.decodeToken(token);
+    } 
+    
+    return decodedToken ? decodedToken?.authorities?.[0] : null;
+  }
+
+  deleteTacosWithoutOrder(): void {
+    this.http.delete(this.deleteTacosWithoutOrderUrl, this.httpOptionsMethod()).subscribe({
+      next: (response) => {
+        console.log("The orderless tacos have been deleted successfully.")
+      },
+      error: (error) => {
+        console.error("There was an error when trying to delete the orderless tacos.")
+      }
+    })
   }
 }

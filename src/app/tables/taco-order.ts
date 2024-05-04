@@ -1,3 +1,4 @@
+import { Drink } from "./drink";
 import { Taco } from "./taco";
 import { User } from "./user";
 
@@ -9,11 +10,9 @@ export class TacoOrder {
     deliveryCity: string = '';
     deliveryState: string = '';
     deliveryZip: string = '';
-    ccNumber: string = '';
-    ccExpiration: string = '';
-    ccCVV: string = '';
     totalOrderPrice: number = 0;
     tacos?: Taco[];
+    drinks: Drink[] = [];
     user?: User;
 
     constructor() {
@@ -21,6 +20,10 @@ export class TacoOrder {
     }
     setTacoList(tacoList: Taco[]): void {
       this.tacos = tacoList;
+    }
+
+    setDrinkList(drinkList: Drink[]): void {
+      this.drinks = drinkList;
     }
 
     toString(): string {
@@ -32,10 +35,8 @@ export class TacoOrder {
         Delivery City: ${this.deliveryCity}
         Delivery State: ${this.deliveryState}
         Delivery Zip: ${this.deliveryZip}
-        Credit Card Number: ${this.ccNumber}
-        Credit Card Expiration: ${this.ccExpiration}
-        Credit Card CVV: ${this.ccCVV}
         Tacos: ${this.tacos ? this.tacos.map(t => JSON.stringify(t)).join(', ') : 'None'}
+        Drinks: ${this.drinks ? this.drinks.map(t => JSON.stringify(t)).join(', ') : 'None'}
         User: ${this.user ? JSON.stringify(this.user) : 'None'}
       `;
     }

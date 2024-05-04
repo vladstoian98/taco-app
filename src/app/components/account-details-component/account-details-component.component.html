@@ -1,0 +1,50 @@
+<body>
+    <div class="change-container">
+        <div class="card bg-light custom-shadow">
+            <div class="card-body">
+                <h4 class="card-title">Change your credentials</h4>
+            </div>
+        </div>
+
+        <br/>
+
+        <label for="oldUsername">Current username</label>
+        <input class="form-control form-control-lg custom-input" type="text" [(ngModel)]="oldUsername"/>
+
+        <br/>
+
+        <label for="newUsername">Desired username</label>
+        <input class="form-control form-control-lg custom-input" type="text" [(ngModel)]="newUsername"/>
+
+        <br/>
+
+        <button class="btn btn-primary btn-lg mt-4 place-order-btn" (click)="changeUsername()">Change username</button>
+
+        <br/>
+
+        <div *ngIf="errorMessageUsername" class="alert alert-danger custom-alert">{{ errorMessageUsername }} <br/> </div>
+
+        <br/>
+        <br/>
+        <br/>
+
+        <label for="oldPassword">Current password</label>
+        <input class="form-control form-control-lg custom-input" type="password" [(ngModel)]="oldPassword"/>
+
+        <br/>
+
+        <label for="oldUsername">Desired password</label>
+        <input class="form-control form-control-lg custom-input" type="password" [(ngModel)]="newPassword"/>
+
+        <br/>
+
+        <button class="btn btn-primary btn-lg mt-4 place-order-btn" (click)="changePassword()">Change password</button>
+
+        <br/>
+
+        <div *ngIf="errorMessagePassword" class="alert alert-danger custom-alert">{{ errorMessagePassword }} <br/> </div>
+
+        <br/>
+        <br/>
+    </div>
+</body>

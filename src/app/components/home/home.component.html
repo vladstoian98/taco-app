@@ -4,14 +4,14 @@
     <br/>
 
     <div class="container-fluid text-center">
-        <div class="d-flex justify-content-center align-items-center mt-5 custom-custom">
-            <div class="card text-black bg-warning mb-3 custom-shadow" style="max-width: 30rem;">
+        <!-- <div class="d-flex justify-content-center align-items-center mt-5 custom-custom">
+            <div class="card text-black mb-3 custom-shadow taco-intro-card" style="max-width: 30rem;">
               <div class="card-body">
-                <h4 class="card-title">Welcome to Taco Cloud</h4>
+                <h4 class="card-title">Welcome to Taco Bytes</h4>
                 <p class="card-text">Click below to make your taco! Choose your ingredients and design your perfect taco.</p>
               </div>
             </div>
-        </div>
+        </div> -->
           
 
         <br/>
@@ -20,29 +20,44 @@
 
         <div class="container-fluid">
             <div class="row">
-                <div class="col-3">
-                    <a class="nav-link" [routerLink]="['/login']">
-                        <div class="card bg-light mb-3 custom-shadow" style="max-width: 40rem;">
-                            <div class="card-body d-flex justify-content-center align-items-center">
-                                <h4 class="card-title">Login</h4>
-                            </div>
+                <div class="col-md-3 custom-top-margin">
+                    <div class="card bg-light custom-shadow card-order">
+                        <div class="card-body">
+                            <h4 class="card-title-custom">Jump to your order by clicking below</h4>
                         </div>
+                    </div>
+                    <br/>
+                    <br/>
+                    <a class="nav-link" [routerLink]="['/order']">
+                        <img class="img-fluid img-responsive rounded-circle custom-shadow custom-image-secondary" src="assets/images/order-home.jpg"/>
                     </a>
                 </div>
-                <div class="col-1"></div>
-                <div class="col-4">
+                <div class="col-md-1"></div>
+                <div class="col-md-4 custom-top-margin-main">
+                    <div class="card bg-light custom-shadow card-order">
+                        <div class="card-body">
+                            <h4 class="">Welcome to Taco Byes<br>Create your taco by pressing below</h4>
+                        </div>
+                    </div>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
                     <a class="nav-link" [routerLink]="['/design/taco']">
-                        <img class="img-fluid img-responsive rounded-circle custom-shadow" src="assets/images/TacoCloud.jpg"/>
+                        <img class="img-fluid img-responsive rounded-circle custom-shadow custom-image-secondary" src="assets/images/TacoCloud.jpg"/>
                     </a>
                 </div>
-                <div class="col-1"></div>
-                <div class="col-3">
-                    <a class="nav-link" [routerLink]="['/register']">
-                        <div class="card bg-light mb-3 custom-shadow" style="max-width: 40rem; max-height: 50rem;">
-                            <div class="card-body d-flex justify-content-center align-items-center">
-                                <h4 class="card-title">Register</h4>
-                            </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-3 custom-top-margin custom-bottom-margin">
+                    <div class="card bg-light custom-shadow card-drink">
+                        <div class="card-body">
+                            <h4 class="card-title-custom">Order some drinks by clicking below</h4>
                         </div>
+                    </div>
+                    <br/>
+                    <br/>
+                    <a class="nav-link" [routerLink]="['/drinks/selection']">
+                        <img class="img-fluid img-responsive rounded-circle custom-shadow custom-image-secondary" src="assets/images/drinks-transition-photo-home.jpg"/>
                     </a>
                 </div>
             </div>

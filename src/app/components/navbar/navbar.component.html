@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-primary custom-shadow" data-bs-theme="dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Taco Cloud</a>
+        <a class="navbar-brand" href="#">Taco Bytes</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -10,19 +10,25 @@
                     <a class="nav-link" [routerLink]="['/']">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/design/taco']">Design a taco!</a>
+                    <a class="nav-link" [routerLink]="['/design/taco']">Design a taco</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/order']">Order your tacos!</a>
+                    <a class="nav-link" [routerLink]="['drinks/selection']">Add some drinks</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/tacos/past']">See a list of past tacos!</a>
+                    <a class="nav-link" [routerLink]="['/order']">Make your order happen</a>
+                </li>
+                <li class="nav-item" *ngIf="loginService.isAdmin()">
+                    <a class="nav-link" [routerLink]="['/login']">Search for a particular user</a>
                 </li>
                 <li class="nav-item" *ngIf="!loginService.isLoggedIn()">
-                    <a class="nav-link" [routerLink]="['/login']">Login!</a>
+                    <a class="nav-link" [routerLink]="['/login']">Login</a>
                 </li>
                 <li class="nav-item" *ngIf="!loginService.isLoggedIn()">
-                    <a class="nav-link" [routerLink]="['/register']">Register!</a>
+                    <a class="nav-link" [routerLink]="['/register']">Register</a>
+                </li>
+                <li class="nav-item" *ngIf="loginService.isLoggedIn()">
+                    <a class="nav-link" [routerLink]="['/account/details']">Change login credentials</a>
                 </li>
                 <li class="nav-item" *ngIf="loginService.isLoggedIn()">
                     <a class="nav-link" href="#" (click)="onLogout(); $event.preventDefault()">Logout</a>

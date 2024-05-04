@@ -11,7 +11,14 @@ import { RegisterComponent } from './components/register/register.component';
 import { DesignTacoComponent } from './components/design-taco/design-taco.component';
 import { OrderComponent } from './components/order/order.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { DrinksComponent } from './components/drinks/drinks.component';
+import { AccountDetailsComponentComponent } from './components/account-details-component/account-details-component.component';
+import { JwtModule } from '@auth0/angular-jwt';
 
+
+export function tokenGetter() {
+  return localStorage.getItem('token');
+}
 
 @NgModule({
   declarations: [
@@ -23,12 +30,21 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     DesignTacoComponent,
     OrderComponent,
     NavbarComponent,
+    DrinksComponent,
+    AccountDetailsComponentComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ["localhost:8080"],
+        disallowedRoutes: [] 
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
