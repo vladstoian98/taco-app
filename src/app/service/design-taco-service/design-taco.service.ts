@@ -8,7 +8,7 @@ import { Taco } from 'src/app/tables/taco';
 })
 export class DesignTacoService {
 
-  private apirUrl: string = 'http://localhost:8080/design/taco';
+  private apiUrl: string = 'http://localhost:8080/design/taco';
 
   constructor(private http: HttpClient) { }
 
@@ -26,11 +26,11 @@ export class DesignTacoService {
   }
 
   getIngredientsGroupedByType(): Observable<any> {
-    return this.http.get(this.apirUrl, this.httpOptions());
+    return this.http.get(this.apiUrl, this.httpOptions());
   }
 
   createTacoFromIngredients(taco: Taco): Observable<any> {
-    return this.http.post(this.apirUrl, taco, this.httpOptions());
+    return this.http.post(this.apiUrl, taco, this.httpOptions());
   }
 
 }

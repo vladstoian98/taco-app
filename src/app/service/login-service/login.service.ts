@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { LoginUser } from 'src/app/components/login-component/login-user';
+import { LoginUser } from 'src/app/components/login/login-user';
 import { Router } from '@angular/router';
 import { TacoService } from '../taco-service/taco.service';
 import { JwtHelperService } from '@auth0/angular-jwt';

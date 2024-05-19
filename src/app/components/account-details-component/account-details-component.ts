@@ -5,8 +5,8 @@ import { LoginService } from 'src/app/service/login-service/login.service';
 
 @Component({
   selector: 'app-account-details-component',
-  templateUrl: './account-details-component.component.html',
-  styleUrls: ['./account-details-component.component.scss']
+  templateUrl: './account-details-component.html',
+  styleUrls: ['./account-details-component.scss']
 })
 export class AccountDetailsComponentComponent {
   oldUsername: string | null = null;

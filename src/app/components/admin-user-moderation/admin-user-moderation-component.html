@@ -1,0 +1,54 @@
+<body>
+    <div class="admin-container">
+        <br/>
+
+        <div class="card bg-light custom-shadow">
+            <div class="card-body">
+                <h4 class="card-title">Search by inserting a valid username</h4>
+            </div>
+        </div>
+  
+        <br/>
+        <br/>
+
+        <input class="form-control form-control-lg custom-input" type="text" id="insertedUsername" [(ngModel)]="insertedUsername" name="insertedUsername" required>
+        
+        <br/>
+        <br/>
+
+        <button (click)="getUserByUsername()" class="btn btn-primary custom-button">Search for user</button>
+
+        <br/>
+        <br/>
+
+        <div *ngIf="selectUserError" >
+            <div class="alert alert-danger custom-alert">{{ selectUserError }} </div>
+            <br/> 
+            <br/> 
+        </div>
+        <table *ngIf="selectedUser != null">
+            <thead>
+                <tr>
+                    <th scope="col">Username</th>
+                    <th scope="col">Full Name</th>
+                    <th scope="col">Phone Number</th>
+                    <th scope="col">Delete Button</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td scope="col">{{ selectedUser.username }}</td>
+                    <td scope="col">{{ selectedUser.fullname }}</td>
+                    <td scope="col">{{ selectedUser.phoneNumber }}</td>
+                    <td scope="col">
+                        <button class="btn btn-primary delete-btn" (click)="deleteSelectedUser(selectedUser.username)" >Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+            <br/>
+            <br/>
+        </table>
+
+        
+    </div>
+</body>
