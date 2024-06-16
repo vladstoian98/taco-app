@@ -76,7 +76,6 @@ export class OrderComponent implements OnInit {
     if (this.stripe) {
         const elements = this.stripe.elements();
         
-        // Options for style can be shared among the elements
         const style = {
             base: {
                 color: '#32325d',
@@ -102,7 +101,6 @@ export class OrderComponent implements OnInit {
         this.cardCvc = elements.create('cardCvc', { style: style });
         this.cardCvc.mount('#card-cvc-element');
 
-        // Listen for changes and display any errors
         const handleEvent = (event: any) => {
             this.cardErrors = event.error ? event.error.message : null;
         };
@@ -110,10 +108,7 @@ export class OrderComponent implements OnInit {
         this.cardNumber.on('change', handleEvent);
         this.cardExpiry.on('change', handleEvent);
         this.cardCvc.on('change', handleEvent);
-
     }
-
-    
   } 
 
 
@@ -215,11 +210,12 @@ export class OrderComponent implements OnInit {
   }
 
   calculateTotalOrderCost(): void {
-    this.totalOrderCost = this.drinksInOrder.reduce((sum, drink) => sum + (drink.price ?? 0), 0);
+    if(this.drinksInOrder[0] != null) {
+      this.totalOrderCost = this.drinksInOrder.reduce((sum, drink) => sum + (drink.price ?? 0), 0);
 
-    this.totalOrderCost += this.tacos.reduce((sum, taco) => sum + taco.totalTacoPrice, 0);
+      this.totalOrderCost += this.tacos.reduce((sum, taco) => sum + taco.totalTacoPrice, 0);
 
-    this.totalOrderCost = parseFloat(this.totalOrderCost.toFixed(1));
+      this.totalOrderCost = parseFloat(this.totalOrderCost.toFixed(1));
+    }
   }
-
 }

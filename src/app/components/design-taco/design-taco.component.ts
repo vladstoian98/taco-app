@@ -41,7 +41,6 @@ export class DesignTacoComponent implements OnInit{
   
 
     if (!allCategoriesSelected) {
-      // If not all categories have at least one selected ingredient, show an error
       this.errorMessageIngredients = "Select at least one ingredient from each categrory.";
       this.errorPresent = true;
     } 
@@ -53,10 +52,8 @@ export class DesignTacoComponent implements OnInit{
     
 
     if (this.errorPresent == false){
-      // If validation passes, proceed to create the taco
       this.designTacoService.createTacoFromIngredients(this.taco).subscribe(data => {
         console.log("The taco: " + this.taco + " has been saved.");
-        // Optional: redirect to another page or show success message
       });
 
       this.errorMessageIngredients = null;

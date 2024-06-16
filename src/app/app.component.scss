@@ -1,12 +1,31 @@
-// h1 {
-//     font-family: "Times New Roman";
-// }
-
 body {
     background-image: url("/assets/images/small-tacos.png");
-    
+    // font-family: "Times New Roman";
     opacity: 1;
     min-height: 100vh;
+}
+
+// .card-title-custom {
+//     font-family: "Times New Roman"
+// }
+
+card {
+    font-family: "Times New Roman";
+}
+
+// .corner-image {
+//     position: fixed;
+    
+//     right: 0;
+//     width: 120px;
+//     height: 90px;
+//     z-index: 1000;
+// }
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .corner-image {
@@ -16,66 +35,41 @@ body {
     width: 120px;
     height: 90px;
     z-index: 1000;
-}
+    }
 
-
-// @media (min-width: 600px) {
-//     body {
-//       font-size: 1px; /* larger screens */
-//     }
-//   }
-  
-// @media (min-width: 1000px) {
-//     body  {
-//         font-size: 20px; /* even larger screens */
-//     }
-// }
-
-// @media (min-width: 600px) {
-//     .card-title {
-//       font-size: 15px; /* larger screens */
-//     }
-//   }
-  
-// @media (min-width: 1000px) {
-//     .card-title  {
-//         font-size: 20px; /* even larger screens */
-//     }
-// }
 
 .footer {
     background-color: #eecbcb;
     color: white;
     padding: 20px;
     width: 100%;
-    display: flex;          /* Enables flexbox layout */
-    align-items: center;    /* Vertically centers the content */
-    justify-content: space-between; /* Spaces out the children evenly */
+    display: flex;          
+    align-items: center;    
+    justify-content: space-between; 
     text-align: left;
-    font-size: 18px;        /* Set an appropriate font size */
+    font-size: 18px;        
 }
 
 .footer p {
-    margin: 0;               /* Removes default margin */
-    line-height: 1.2;        /* Adjust line height for better readability */
+    margin: 0;               
+    line-height: 1.2;        
 }
 
-/* Media query for tablets */
+
 @media (max-width: 768px) {
     .footer {
-        font-size: 18px; /* Smaller font size for smaller devices */
+        font-size: 18px; 
     }
 
     .corner-image {
-        width: 70px; /* Smaller size for smaller screens */
-        height: auto; /* Maintains aspect ratio */
+        width: 70px; 
+        height: auto; 
     }
 }
 
-/* Media query for mobile phones */
 @media (max-width: 480px) {
     .footer {
-        font-size: 14px; /* Even smaller font size for mobile phones */
+        font-size: 14px;
     }
 }
   

@@ -1,15 +1,13 @@
 .order-container {
-  // width: 100%; /* Set to the desired width, or keep at 100% for full width */
-  // max-width: 600px; /* Increase this value to make the form wider */
-  margin-top: 150px; /* Adjust this value if you want to change the space from the top */
-  padding: 30px; /* Increase padding for a larger overall form */
+  margin-top: 150px; 
+  padding: 30px; 
   text-align: center;
-  font-size: 1.25rem; /* Increase font size for labels and text */
+  font-size: 1.25rem; 
   box-shadow: 20px 20px 30px 10px rgba(0,0,0,0.75);
   border-radius: 100px;
-  display: flex; /* Add flex display */
-  flex-direction: column; /* Stack children vertically */
-  align-items: center; /* Center children horizontally */
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
   background: linear-gradient(to bottom, rgb(255, 147, 97), #ffffff);
   border-color: rgb(255, 189, 159);
   border-width: 1cm;
@@ -20,22 +18,20 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Align items to the top of the viewport */
-  align-items: center; /* Keep horizontal centering */
+  justify-content: flex-start; 
+  align-items: center; 
   color: black;
   font-family: sans-serif;
 }
 
 .no-bullets {
   list-style: none;
-  padding-left: 0; /* Removes padding if it exists */
+  padding-left: 0;
 }
 
 .card {
-  background-image: linear-gradient(to bottom, #ffffe0, #ffffff); /* Gradient from light yellow to white */
-  width: 25rem; /* Set a specific width */
-  //height: 6.5rem;
-  // box-shadow: 20px 20px 30px 10px rgba(0,0,0,0.75);
+  background-image: linear-gradient(to bottom, #ffffe0, #ffffff);
+  width: 25rem; 
   color: black;
   border-radius: 70px;
   background: linear-gradient(to bottom, #ffffff, rgb(255, 147, 97));
@@ -46,8 +42,8 @@ body {
 
 .total-cost-card {
   background: linear-gradient(to bottom, #ffd900, rgb(245, 113, 52));
-  width: 50%; /* Adjust to desired width, percentage relative to parent */
-  margin: 0 auto; /* This will center the card within the .order-container */
+  width: 50%; 
+  margin: 0 auto; 
 }
 
 .card-title-cost {
@@ -70,15 +66,10 @@ body {
 }
 
 .custom-alert {
-  width: 100%; /* Match the width of the form inputs */
-  max-width: 300px; /* Same as the custom-input max-width */
-  margin: 0 auto; /* Center the alert if it's smaller than the max-width */
+  width: 100%;
+  max-width: 300px; 
+  margin: 0 auto; 
   background: rgb(255, 80, 80);
-}
-
-#card-number-element {
-  max-width: 380px;
-  min-width: 300px;
 }
 
 .card-taco {
@@ -118,4 +109,7 @@ body {
   margin-bottom: 100px;
 }
 
-  
+.custom-width {
+  width: 70%;
+}
+

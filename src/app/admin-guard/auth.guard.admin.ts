@@ -21,18 +21,14 @@ export class AuthGuardAdmin implements CanActivate {
     if (this.loginService.isLoggedIn() && this.loginService.isAdmin()) {
       return true;
     } else if (!this.loginService.isLoggedIn()) {
-      // Store the attempted URL for redirecting
       this.loginService.redirectUrl = url;
 
-      // Navigate to the login page with extras
       this.router.navigate(['/login']);
       return false;
     }
 
-    // Store the attempted URL for redirecting
     this.loginService.redirectUrl = url;
 
-    // Navigate to the login page with extras
     this.router.navigate(['/home']);
     return false;
   }

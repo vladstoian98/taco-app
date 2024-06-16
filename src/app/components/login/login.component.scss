@@ -1,21 +1,21 @@
 body, html {
-  margin: 0;
+  height: 100%;
+  margin: 0; 
   display: flex;
-  flex-direction: column;
-  justify-content: center; /* Center vertically */
-  align-items: center; /* Center horizontally */
-  color: black;
-  height: 100vh; /* Use the full height of the viewport */
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  font-family: sans-serif;
 }
 
 .login-container {
-  display: flex; /* Enables flexbox */
-  flex-direction: column; /* Stacks children vertically */
-  justify-content: center; /* Center vertically inside the login-container */
-  align-items: center; /* Center horizontally inside the login-container */
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;
   width: 100%;
   max-width: 400px;
-  margin: auto; /* Ensure auto margin for all sides */
+  margin: auto; 
   padding: 30px;
   text-align: center;
   font-size: 1.25rem;
@@ -25,55 +25,46 @@ body, html {
   border-color: rgb(255, 236, 200);
   border-width: 1cm;
   border-style: solid;
-  /* Removed margin-top to use margin: auto instead */
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 .card {
-  /* Ensure no other alignments are conflicting */
-  margin: 0 auto; /* Center the card within the .login-container */
+  margin: 0 auto; 
   background-image: linear-gradient(to bottom, #ffffff, rgb(255, 200, 97));
   color: black;
   border-radius: 70px;
   border-color: rgb(255, 236, 200);
   border-width: 1mm;
-  border-style: solid;
-  
-  /* Remove fixed width to allow auto margins to work */
-  /* width: 12rem; */
-  
-  /* Ensure card is a flex container if it needs to align its children */
+  border-style: solid;  
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
-  /* Add padding if the card content is not spaced out */
 }
 
-
-
 .form-group {
-  margin-bottom: 1.5rem; /* Increase space between form groups */
+  margin-bottom: 1.5rem; 
 }
 
 .col-form-label-lg {
-  font-size: 1.5rem; /* Larger label text */
+  font-size: 1.5rem; 
 }
 
 .form-control-lg {
-  font-size: 1.25rem; /* Larger input text */
-  padding: .5rem 1rem; /* Larger padding inside inputs */
-  height: auto; /* Adjust height if necessary */
+  font-size: 1.25rem;
+  padding: .5rem 1rem; 
+  height: auto; 
 }
 
 .btn-lg {
-  padding: .5rem 1rem; /* Larger padding for button */
-  font-size: 1.25rem; /* Larger button text */
-  width: 70%; /* Makes the button fill the width of its parent container */
+  padding: .5rem 1rem; 
+  font-size: 1.25rem;
+  width: 70%;
 }
 
 .error-message {
-  font-size: 1.25rem; /* Larger error message text */
+  font-size: 1.25rem; 
 }
 
 .custom-alert {

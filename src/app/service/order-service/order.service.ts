@@ -37,21 +37,18 @@ export class OrderService {
   }
 
   addDrinkToOrder(drink: Drink): void {
-    // First, load the current drinks from local storage to ensure we're not overwriting previous drinks.
     const drinksString = localStorage.getItem('drinksInOrder');
     if (drinksString) {
         try {
             this.currentOrder.drinks = JSON.parse(drinksString);
         } catch (error) {
             console.error('Failed to parse drinks from localStorage', error);
-            this.currentOrder.drinks = []; // Reset to empty array in case of error
+            this.currentOrder.drinks = []; 
         }
     }
 
-    // Now, add the new drink to the array
     this.currentOrder.drinks.push(drink);
 
-    // Finally, update the local storage with the new state
     localStorage.setItem('drinksInOrder', JSON.stringify(this.currentOrder.drinks));
   }
 

@@ -27,12 +27,12 @@ export class AccountDetailsService {
 
   changeUsername (oldUsername: string, newUsername: string): Observable<any> {
     let changeUsernameDetails: ChangeUsernameDetails  = new ChangeUsernameDetails(oldUsername, newUsername);
-    return this.httpClient.post<any>(this.changeUsernameUrl, changeUsernameDetails, this.httpOptions());
+    return this.httpClient.patch<any>(this.changeUsernameUrl, changeUsernameDetails, this.httpOptions());
   }
 
   changePassword (oldPassword: string, newPassword: string): Observable<any> {
     let changePasswordDetails: ChangePasswordDetails = new ChangePasswordDetails(oldPassword, newPassword);
-    return this.httpClient.post<any>(this.changePasswordUrl, changePasswordDetails, this.httpOptions());
+    return this.httpClient.patch<any>(this.changePasswordUrl, changePasswordDetails, this.httpOptions());
   }
 
 

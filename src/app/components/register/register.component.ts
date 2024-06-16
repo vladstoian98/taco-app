@@ -12,7 +12,7 @@ export class RegisterComponent {
 
   model = new RegistrationForm();
 
-  registerError: string = '';
+  registerError: string = "";
 
   constructor(private registrationService: RegistrationService, private router : Router) {}
 
@@ -24,10 +24,12 @@ export class RegisterComponent {
       this.registrationService.registerUser(this.model).subscribe(
         response => {
           console.log('Registration successful', response);
+          this.registerError = "";
           this.router.navigate(['/login']);
         },
         error => {
           console.error('Registration failed', error);
+          this.registerError = "The username is already used."
         }
       );
     }

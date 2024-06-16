@@ -1,18 +1,17 @@
 body, html {
   height: 100%;
-  margin: 0; /* No change here, keeps the body and html elements without default margins */
+  margin: 0; 
   display: flex;
-  flex-direction: column; /* This is fine for overall page layout */
-  justify-content: center; /* Change this to center to align items vertically */
-  align-items: center; /* Centers content horizontally, which should help with the card */
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;
   color: black;
   font-family: sans-serif;
 }
 
 .card {
-  background-image: linear-gradient(to bottom, #ffffff, rgb(255, 200, 97)); /* Gradient from light yellow to white */
-  width: 20rem; /* Set a specific width */
-  // box-shadow: 20px 20px 30px 10px rgba(0,0,0,0.75);
+  background-image: linear-gradient(to bottom, #ffffff, rgb(255, 200, 97)); 
+  width: 20rem; 
   color: black;
   border-radius: 70px;
   border-color: rgb(255, 236, 200);
@@ -21,14 +20,13 @@ body, html {
 
 
 .content-container {
-  text-align: center; /* No change, but ensure this doesn't conflict with other styles */
-  width: 100%; /* Ensures the container takes full width to center content correctly */
-  max-width: 40rem; /* Optional: You can set a max-width to prevent the container from being too wide on larger screens */
-  display: flex; /* Using flex to help with the alignment of inner items */
-  flex-direction: column; /* Keeps items in a column layout */
-  align-items: center; /* This will center the card horizontally */
+  text-align: center;
+  width: 100%; 
+  max-width: 40rem;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
   box-shadow: 20px 20px 30px 10px rgba(0,0,0,0.75);
-  // background-color: #ffffff;
   border-radius: 100px;
   background: linear-gradient(to bottom, #ffffff, rgb(255, 200, 97));
   border-color: rgb(255, 236, 200);
@@ -40,15 +38,13 @@ body, html {
   border-color: rgb(255, 200, 97);
 }
 
-/* Reduced or removed top margin */
 .container {
-  padding-top: 4rem; /* Add top padding to .container */
+  padding-top: 4rem; 
 }
 
-/* Adjusted heading margin */
 h2 {
-  margin-top: 10px; /* Reduced top margin */
-  margin-bottom: 10px; /* Adjust as needed */
+  margin-top: 10px; 
+  margin-bottom: 10px;
 }
 
 label {
@@ -62,42 +58,30 @@ input[type="checkbox"] {
 
 .no-bullets {
   list-style: none;
-  padding-left: 0; /* Removes padding if it exists */
+  padding-left: 0;
 }
 
-/* Directly targeting the container class and reducing the top margin */
 .container.mt-4 {
-  margin-top: 0.5rem !important; /* Using !important to ensure override */
+  margin-top: 0.5rem !important;
 }
 
-/* Reducing the top margin of the first heading inside the container */
 .container > h2:first-child {
-  margin-top: 0 !important; /* Adjust the value as needed */
+  margin-top: 0 !important; 
 }
 
 .form-control {
   width: 300px;
-  // box-shadow: 20px 20px 30px 10px rgba(0,0,0,0.75);
 }
 
 .custom-alert {
   width: 80%;
   margin: 0 auto;
-  // box-shadow: 20px 20px 30px 10px rgba(0,0,0,0.75);
   background: rgb(255, 80, 80);
-}
-
-.btn { 
-  // box-shadow: 20px 20px 30px 10px rgba(0,0,0,0.75);
 }
 
 .custom-button {
   color: black;
   background-color: rgb(255, 200, 97);
-}
-
-.form-check-input {
-  
 }
 
 .card-order {
@@ -108,6 +92,10 @@ input[type="checkbox"] {
   border-width: 1mm;
   border-style: solid;
   min-width: 100px;
+}
+
+.custom-width {
+  width: 70%;
 }
 
 .custom-shadow {

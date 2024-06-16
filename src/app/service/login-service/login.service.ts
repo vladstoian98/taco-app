@@ -37,7 +37,6 @@ export class LoginService {
     private jwtHelperService: JwtHelperService
   ) { }
 
-  /** POST: login to the server */
   login (user: LoginUser): Observable<any> {
     return this.http.post<any>(this.loginUrl, user, this.httpOptions);
   }

@@ -9,17 +9,17 @@ body, html {
     margin: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center vertically */
-    align-items: center; /* Center horizontally */
+    justify-content: center;
+    align-items: center;
     color: black;
-    height: 100vh; /* Use the full height of the viewport */
+    height: 100%; 
 }
 
 .change-container {
-    display: flex; /* Enables flexbox */
-    flex-direction: column; /* Stacks children vertically */
-    justify-content: center; /* Center vertically inside the container */
-    align-items: center; /* Center horizontally inside the container */
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center; 
     width: 100%;
     max-width: 400px;
     padding: 30px;
@@ -32,33 +32,27 @@ body, html {
     border-color: rgb(255, 146, 103);
     border-width: 1cm;
     border-style: solid;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 
 .card {
-    /* Ensure no other alignments are conflicting */
-    margin: 0 auto; /* Center the card within the .login-container */
+    margin: 0 auto; 
     background: linear-gradient(to bottom, #ffffff,  rgb(255, 146, 103));
     color: black;
     border-radius: 70px;
     border-color: rgb(226, 109, 62);
     border-width: 1mm;
     border-style: solid;
-    
-    /* Remove fixed width to allow auto margins to work */
-    /* width: 12rem; */
-    
-    /* Ensure card is a flex container if it needs to align its children */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
-    /* Add padding if the card content is not spaced out */
 }
 
 .error-message {
-    font-size: 1.25rem; /* Larger error message text */
+    font-size: 1.25rem; 
 }
   
 .custom-alert {

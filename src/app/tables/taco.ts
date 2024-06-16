@@ -6,9 +6,8 @@ export class Taco {
     createdAt: Date;
     name: string = "";
     totalTacoPrice: number = 0;
-    ingredients: Ingredient[] = []; // replace 'any' with the actual Ingredient type if available
-    tacoOrder?: TacoOrder; // replace 'any' with the actual TacoOrder type if available
-
+    ingredients: Ingredient[] = []; 
+    tacoOrder?: TacoOrder;
     constructor() {
       this.createdAt = new Date();
     }

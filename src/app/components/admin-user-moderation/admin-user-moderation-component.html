@@ -26,29 +26,28 @@
             <br/> 
             <br/> 
         </div>
-        <table *ngIf="selectedUser != null">
-            <thead>
-                <tr>
-                    <th scope="col">Username</th>
-                    <th scope="col">Full Name</th>
-                    <th scope="col">Phone Number</th>
-                    <th scope="col">Delete Button</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td scope="col">{{ selectedUser.username }}</td>
-                    <td scope="col">{{ selectedUser.fullname }}</td>
-                    <td scope="col">{{ selectedUser.phoneNumber }}</td>
-                    <td scope="col">
-                        <button class="btn btn-primary delete-btn" (click)="deleteSelectedUser(selectedUser.username)" >Delete</button>
-                    </td>
-                </tr>
-            </tbody>
-            <br/>
-            <br/>
-        </table>
-
+        <div class="user-details" *ngIf="selectedUser != null">
+            <div class="detail-pair">
+                <div class="detail-item">
+                    <span class="detail-header">Username:</span>
+                    <span class="detail-value">{{ selectedUser.username }}</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-header">Full Name:</span>
+                    <span class="detail-value">{{ selectedUser.fullname }}</span>
+                </div>
+            </div>
+            <div class="detail-pair">
+                <div class="detail-item">
+                    <span class="detail-header">Phone Number:</span>
+                    <span class="detail-value">{{ selectedUser.phoneNumber }}</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-header">Delete Button:</span>
+                    <button class="btn btn-primary delete-btn" (click)="deleteSelectedUser(selectedUser.username)">Delete</button>
+                </div>
+            </div>
+        </div>
         
     </div>
 </body>

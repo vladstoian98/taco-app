@@ -45,7 +45,7 @@ export class AccountDetailsComponentComponent {
     if(this.oldUsername != null && this.newUsername != null) {
       this.accountDetailsService.changeUsername(this.oldUsername, this.newUsername).subscribe({
         next: (response) => {
-          console.log("You have successfully changed your username", response.data); // Accessing data property
+          console.log("You have successfully changed your username", response.data); 
           this.loginService.logout();
           this.router.navigate(['/home']);
         },
